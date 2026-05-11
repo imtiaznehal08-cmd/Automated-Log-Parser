@@ -1,0 +1,30 @@
+May 11 09:00:01 my-server sshd[1011]: Accepted password for admin from 192.168.1.50 port 54321 ssh2
+May 11 09:05:12 my-server sshd[1025]: Failed password for root from 185.209.0.12 port 41222 ssh2
+May 11 09:05:14 my-server sshd[1025]: Failed password for root from 185.209.0.12 port 41222 ssh2
+May 11 09:05:16 my-server sshd[1025]: Failed password for root from 185.209.0.12 port 41222 ssh2
+May 11 09:05:18 my-server sshd[1025]: Failed password for root from 185.209.0.12 port 41222 ssh2
+May 11 09:05:20 my-server sshd[1025]: Failed password for root from 185.209.0.12 port 41222 ssh2
+May 11 10:15:45 my-server sshd[1140]: Failed password for invalid user guest from 203.0.113.5 port 58912 ssh2
+May 11 10:15:50 my-server sshd[1140]: Failed password for invalid user support from 203.0.113.5 port 58912 ssh2
+May 11 11:30:22 my-server sshd[1201]: Accepted password for user01 from 192.168.1.55 port 49100 ssh2
+May 11 12:00:01 my-server sshd[1350]: Failed password for root from 45.33.2.145 port 33412 ssh2
+May 11 12:00:05 my-server sshd[1350]: Failed password for root from 45.33.2.145 port 33412 ssh2
+May 11 14:20:10 my-server sshd[1410]: Failed password for invalid user ubuntu from 190.12.4.88 port 61234 ssh2
+May 11 15:45:00 my-server sshd[1500]: Accepted password for admin from 192.168.1.50 port 54322 ssh2
+# --- SSH Brute Force Scenario ---
+May 11 10:20:01 kali-vm sshd[2104]: Failed password for root from 192.168.1.105 port 42310 ssh2
+May 11 10:20:03 kali-vm sshd[2104]: Failed password for root from 192.168.1.105 port 42310 ssh2
+May 11 10:20:05 kali-vm sshd[2104]: Failed password for root from 192.168.1.105 port 42310 ssh2
+May 11 10:20:08 kali-vm sshd[2104]: Failed password for root from 192.168.1.105 port 42310 ssh2
+May 11 10:21:15 kali-vm sshd[2110]: Accepted password for developer from 10.0.0.5 port 55122 ssh2
+
+# --- Web Server (Apache) Injection Attempts ---
+127.0.0.1 - - [11/May/2026:10:25:01] "GET /index.php?id=1' OR '1'='1 HTTP/1.1" 200 452 "-" "Mozilla/5.0"
+127.0.0.1 - - [11/May/2026:10:25:05] "GET /etc/passwd HTTP/1.1" 403 211 "-" "Mozilla/5.0"
+127.0.0.1 - - [11/May/2026:10:26:40] "POST /login.php HTTP/1.1" 401 128 "-" "Hydra-Attacker-v9.0"
+
+# --- Generic Auth/Sudo Logs ---
+May 11 11:05:22 kali-vm sudo: pam_unix(sudo:auth): conversation failed
+May 11 11:05:22 kali-vm sudo: user01 : TTY=pts/0 ; PWD=/home/user01 ; USER=root ; COMMAND=/usr/bin/apt update
+May 11 12:40:10 kali-vm sshd[3055]: Failed password for invalid user admin from 45.33.2.145 port 33412 ssh2
+May 11 12:40:15 kali-vm sshd[3055]: Failed password for invalid user guest from 45.33.2.145 port 33412 ssh2
